@@ -15,7 +15,10 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
-            InvalidOperationException.Equals(Students.Count < 5, true);
+            if (Students.Count < 5)
+            {
+                throw new InvalidOperationException("Cannot get letterGrade when there are less than 5 students");
+            }
             var grades = Students.OrderByDescending(e => e.AverageGrade).ToList();
             int threshold = 0;
 

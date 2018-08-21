@@ -24,6 +24,7 @@ namespace GradeBook.GradeBooks
             {
                 if (grades[(threshold * i) - 1] <= averageGrade)
                 {
+                    Console.WriteLine('A' + i);
                     return (char)('A' + i);
                 }
             }
